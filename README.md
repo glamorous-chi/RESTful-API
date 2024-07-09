@@ -25,13 +25,12 @@ This is a RESTful API built with Node.js and Express for managing user resources
 ```bash
 git clone https://github.com/glamorous-chi/RESTful-API
 cd RESTful-API
-```
 
 2. Install Dependencies:
 Make sure you have Node.js installed on your machine.
+
 ```bash 
 npm install
-```
 
 ---
 ### Alternatively,
@@ -41,12 +40,11 @@ npm install
 
    ```bash
    npm init -y
-   ```
 
 2. Install required dependencies (express, mongoose, dotenv, cloudinary, multer, bcrypt, nodemon, jsonwebtoken, etc):
 
    ```bash
-   npm install express mongoose dotenv cloudinary multer bcrypt nodemon
+   npm install express mongoose dotenv cloudinary multer bcrypt nodemon jsonwebtoken
 
 - Folder Structure
 ```
