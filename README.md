@@ -25,6 +25,7 @@ This is a RESTful API built with Node.js and Express for managing user resources
 git clone https://github.com/glamorous-chi/RESTful-API
 cd RESTful-API
 ```
+- Folder Structure
 ```
 RESTful API/
 ├── src/
