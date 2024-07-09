@@ -94,7 +94,7 @@ npm start
 ```
 The server will start on the port specified in the .env file (default is 3000).
 
-## API Endpoints with Examples change
+## API Endpoints with Examples
 
 ### User Authentication
 
