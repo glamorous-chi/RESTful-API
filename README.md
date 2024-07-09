@@ -76,12 +76,14 @@ npm start
 The server will start on the port specified in the .env file (default is 3000).
 
 ## API Endpoints
-### Authentication
-- New user Signup.
-    - POST /api/auth/signup
 
-#### Body(raw):
-```
+### User Authentication
+
+#### New user Signup.
+- **Endpoint** `POST /api/auth/signup`
+
+- **Request Body(raw):**
+```json
 {
     "name": "Paul",
     "email": "paulo@gmail.com",
@@ -89,8 +91,8 @@ The server will start on the port specified in the .env file (default is 3000).
 }
 ```
 
-#### Response:
-```
+- **Response:**
+```json
 {
     "success": true,
     "message": "User registerd successfully",
