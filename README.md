@@ -1,4 +1,4 @@
-# My Node.js and Express Application
+# Node-Express RESTful API Documentation
 
 ## Table of Contents
 - [Overview](#overview)
@@ -8,7 +8,7 @@
 - [API Endpoints](#API-Endpoints)
     - [User Authentication](#user-authentication)
     - [User Management](#user-management)
-- [Examples of Requests and Responses](#Examples-of-Requests-and-Responses)
+<!-- - [Examples of Requests and Responses](#Examples-of-Requests-and-Responses) -->
 
 
 ## Overview
