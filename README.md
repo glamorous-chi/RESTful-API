@@ -43,11 +43,10 @@ npm install
    npm init -y
    ```
 
-2. Install required dependencies (express, mongoose, dotenv, cloudinary, multer, bcrypt, nodemon etc):
+2. Install required dependencies (express, mongoose, dotenv, cloudinary, multer, bcrypt, nodemon, jsonwebtoken, etc):
 
    ```bash
    npm install express mongoose dotenv cloudinary multer bcrypt nodemon
-   ```
 
 - Folder Structure
 ```
