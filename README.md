@@ -131,7 +131,7 @@ The server will start on the port specified in the .env file (default is 3000).
 ```
 
 #### User Login
-- **Endpoint** `POST/api/auth/login`
+- **Endpoint** `POST /api/auth/login`
 
 - **Request Body(raw):**
 ```json
@@ -205,7 +205,7 @@ The server will start on the port specified in the .env file (default is 3000).
 ```
 
 #### Retrieve a specific user by ID.
- - **Endpoint** `GET/api/user/:userId`
+ - **Endpoint** `GET /api/user/:userId`
 
  - **Request Body(raw):** `None`
 
@@ -229,7 +229,7 @@ The server will start on the port specified in the .env file (default is 3000).
 
 
 #### Update an existing user
-- **Endpoint** `PUT/api/user/update`
+- **Endpoint** `PUT /api/user/update`
 
 - **Request Headers:** `"Authorization": "Bearer jwt_token"`
 
@@ -259,7 +259,7 @@ The server will start on the port specified in the .env file (default is 3000).
  ```
 
 #### Delete a user
-- **Endpoint** `DELETE/api/delete/:userId`
+- **Endpoint** `DELETE /api/delete/:userId`
 
  - **Request Headers:** `"Authorization": "Bearer jwt_token"`(Of Admin)
 
