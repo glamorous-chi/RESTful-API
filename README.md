@@ -6,6 +6,8 @@
 - [Installation](#installation)
 - [Running the Application](#Running-the-Application)
 - [API Endpoints](#API-Endpoints)
+    - [User Authentication](#user-authentication)
+    - [User Management](#user-management)
 - [Examples of Requests and Responses](#Examples-of-Requests-and-Responses)
 
 
@@ -109,19 +111,20 @@ The server will start on the port specified in the .env file (default is 3000).
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjhjZTA1ODhhZDRiZTNhYzE3NzI0OTkiLCJpYXQiOjE3MjA1MDg1MDQsImV4cCI6MTcyMTExMzMwNH0.jov-SRexLLh_c4KQbbAz0iYip738HxCZeI77KrfAU1k"
 }
 ```
-- User Login
-    - POST/api/auth/login
 
-#### Body(raw):
-```
+#### User Login
+- **Endpoint** `POST/api/auth/login`
+
+- **Request Body(raw):**
+```json
 {
     "email": "paulo@gmail.com",
     "password": "paul123"
 }
 ```
 
-#### Response:
-```
+- **Response:**
+```json
 {
     "success": true,
     "message": "Login successful",
@@ -139,15 +142,118 @@ The server will start on the port specified in the .env file (default is 3000).
 }
 ```
 
-### Users
-- Get all users
-    - GET/api/users
-- Retrieve a specific user by ID.
-    - GET/api/user/:userId
-- Update an existing user
-    - PUT/api/user/update 
--  Delete a user
-    - DELETE/api/delete/:userId
+### User Management
+
+#### Get all users.
+- **Endpoint** `GET /api/users`
+
+- **Request Body(raw):** `None`
+
+- **Response:**
+```
+{
+    "success": true,
+    "message": "Users retrieved successfully",
+    "users": [
+        {
+            "_id": "668b3b24330e0f0fe640ee66",
+            "name": "Chioma",
+            "email": "chi123@gmail.com",
+            "role": 1,
+            "createdAt": "2024-07-08T01:04:36.408Z",
+            "updatedAt": "2024-07-09T03:09:53.688Z",
+            "__v": 0
+        },
+        {
+            "_id": "668b3d6a330e0f0fe640ee69",
+            "name": "JJ",
+            "email": "jj123@gmail.com",
+            "role": 0,
+            "createdAt": "2024-07-08T01:14:18.892Z",
+            "updatedAt": "2024-07-08T01:14:18.892Z",
+            "__v": 0
+        },
+        {
+            "_id": "668b3dbc330e0f0fe640ee6c",
+            "name": "Nonye",
+            "email": "nonye@gmail.com",
+            "role": 0,
+            "createdAt": "2024-07-08T01:15:40.830Z",
+            "updatedAt": "2024-07-08T01:15:40.830Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
+#### Retrieve a specific user by ID.
+ - **Endpoint** `GET/api/user/:userId`
+
+ - **Request Body(raw):** `None`
+
+ - **Response:**
+ ```
+ {
+    "success": true,
+    "message": "User retrieved successfully",
+    "user": {
+        "_id": "668ce0588ad4be3ac1772499",
+        "name": "Paul",
+        "email": "paulo@gmail.com",
+        "password": "$2b$12$tyFngyg/sxZbO3/Vpqjwv.7rv.ZWadEkfJyGVkM6A4B216qZjQwj6",
+        "role": 0,
+        "createdAt": "2024-07-09T07:01:44.236Z",
+        "updatedAt": "2024-07-09T07:01:44.236Z",
+        "__v": 0
+    }
+}
+ ```
+
+
+#### Update an existing user
+- **Endpoint** `PUT/api/user/update`
+
+  - **Request Headers:** `"Authorization": "Bearer jwt_token"`
+
+ - **Request Body(raw):**
+ ```
+ {   
+    "password": "newPassword"
+}
+```
+
+ - **Response:**
+ ```
+{
+    "success": true,
+    "message": "User Profile updated successfully",
+    "updatedUser": {
+        "_id": "668ce0588ad4be3ac1772499",
+        "name": "Paul",
+        "email": "paulo@gmail.com",
+        "password": "newPassword",
+        "role": 0,
+        "createdAt": "2024-07-09T07:01:44.236Z",
+        "updatedAt": "2024-07-09T07:58:24.090Z",
+        "__v": 0
+    }
+}
+ ```
+
+#### Delete a user
+- **Endpoint** `DELETE/api/delete/:userId`
+
+ - **Request Headers:** `"Authorization": "Bearer jwt_token"`(Of Admin)
+
+ - **Request Body(raw):** `None`
+
+  - **Response:**
+ ```
+{
+    "success": true,
+    "message": "User deleted successfully"
+}
+ ```
 
 ## Examples of Requests and Responses
 ### Retrieve All Users
