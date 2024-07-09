@@ -12,6 +12,10 @@ console.log("Server started");
 
 connectDb(dbUrl)
 
+app.get('/', (req, res) => {
+    res.send('Node-Express RESTful API ');
+  });
+
 app.use("/api/auth", authRouter)
 app.use("/api", userRouter)
 

@@ -5,10 +5,9 @@
     - [Features](#features)
 - [Installation](#installation)
 - [Running the Application](#Running-the-Application)
-- [API Endpoints](#API-Endpoints)
+- [API Endpoints with Examples](#API-Endpoints-with-examples)
     - [User Authentication](#user-authentication)
     - [User Management](#user-management)
-<!-- - [Examples of Requests and Responses](#Examples-of-Requests-and-Responses) -->
 
 
 ## Overview
@@ -95,7 +94,7 @@ npm start
 ```
 The server will start on the port specified in the .env file (default is 3000).
 
-## API Endpoints
+## API Endpoints with Examples change
 
 ### User Authentication
 
