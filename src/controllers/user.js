@@ -51,17 +51,14 @@ export const updateUser = async (req, res) => {
         }
 
         if (imageFile) {
-            // Delete image from cloudinary
             if (user.image && user.imagePublicId) {
                 await cloudinary.uploader.destroy(user.imagePublicId);
             }
-            // upload new image to cloudinaryu
             const imageResult = await cloudinary.uploader.upload(imageFile.path);
             updateUserData.image = imageResult.secure_url;
             updateUserData.imagePublicId = imageResult.public_id;
         }
 
-        // Update user data
         const updatedUser = await User.findByIdAndUpdate(userId, updateUserData, {
             new: true,
         });
@@ -93,38 +90,3 @@ export const deleteUser = async (req, res) => {
         return res.status(500).json({ message: "User deletion failed", err })
     }
 }
-
-export const updateUserRole = async (req, res) => {
-    try {
-      const userId = req.user._id;
-      const { role } = req.body;
-  
-      if (!role) {
-        return res.status(400).json({ error: "Role is required" });
-      }
-
-      console.log("Role is: ", role);
-
-      const updateQuery = {
-        role: role,
-        isAdmin: role === 1 ? true : false,
-      };
-  
-      const updatedUser = await User.findByIdAndUpdate(userId, updateQuery, {
-        new: true,
-      });
-  
-      if (!updatedUser) {
-        return res.status(404).json({ error: "User not found" });
-      }
-  
-      updatedUser.password = undefined;
-      
-      res.json({ message: "User role updated successfully", user: updatedUser });
-    } catch (err) {
-      console.log(err);
-      res
-        .status(500)
-        .json({ error: "Failed to update user role", errorMsg: err.message });
-    }
-  };

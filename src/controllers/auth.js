@@ -45,7 +45,7 @@ export const signUp = async (req, res) => {
         await user.save()
 
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" })
-        return res.json({ success: true, user, token })
+        return res.json({ success: true, message: "User registerd successfully",user, token })
     }
 
     catch (err) {

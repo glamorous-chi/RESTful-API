@@ -1,4 +1,3 @@
-// Middlewares work in between routes and controllers
 import jwt from "jsonwebtoken";
 import User from "../models/user.js"
 
@@ -8,10 +7,8 @@ export const isLoggedIn = async (req, res, next) => {
         return res.status(401).json({success: false, message:"Invalid token or no token provided"})
     }
 
-    const token = authHeader.split(" ")[1]; //This extracts just the token and removes the "Bearer" in front of the token.
-    
-    // verify the token
-    // Whatever you use in signing the token, is the same you will use to verify the token.
+    const token = authHeader.split(" ")[1];
+
     if(token){
         jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
             if(err){
@@ -44,8 +41,6 @@ export const isAdmin = async (req, res, next) => {
         else{
             return res.status(403).json({success: false, message: "You are not authorized"});
         }
-       
-
     } catch (err) {
         console.log(err);
         res.status(500).json({success: false, message: "Error checking if user is admin"})
