@@ -68,7 +68,7 @@ CLOUDINARY_API_KEY = your_cloudinary_api_key
 CLOUDINARY_API_SECRET = your_cloudinary_api_secret
 ```
 4. Set up the database:
-Make sure you have MongoDB installed and running on your local machine. The MONGODB_URL environment variable should point to your local MongoDB instance.
+Make sure you have MongoDB installed and running on your local machine. The MONGODB_URL environment variable should point to the address of your MongoDB database that is running on your local computer.
 
 ## Running the Application
 1. Start the server:
