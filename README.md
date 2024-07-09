@@ -38,7 +38,7 @@ npm install
 ### Alternatively,
 #### Initialize a new project
 
-1. Create a new Node.js project and initialize it with npm:
+1. Create a new Node.js project on your local computer and initialize it with npm:
 
    ```bash
    npm init -y
@@ -47,7 +47,7 @@ npm install
 2. Install required dependencies (express, mongoose, dotenv, cloudinary, multer, bcrypt, nodemon etc):
 
    ```bash
-   npm install express mongoose dotenv cloudinary multer express-validator
+   npm install express mongoose dotenv cloudinary multer bcrypt nodemon
    ```
 
 - Folder Structure
