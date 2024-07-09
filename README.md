@@ -213,9 +213,9 @@ The server will start on the port specified in the .env file (default is 3000).
 #### Update an existing user
 - **Endpoint** `PUT/api/user/update`
 
-  - **Request Headers:** `"Authorization": "Bearer jwt_token"`
+- **Request Headers:** `"Authorization": "Bearer jwt_token"`
 
- - **Request Body(raw):**
+- **Request Body(raw):**
  ```
  {   
     "password": "newPassword"
