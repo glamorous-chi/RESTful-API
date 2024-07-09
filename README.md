@@ -27,6 +27,29 @@ This is a RESTful API built with Node.js and Express for managing user resources
 git clone https://github.com/glamorous-chi/RESTful-API
 cd RESTful-API
 ```
+
+2. Install Dependencies:
+Make sure you have Node.js installed on your machine.
+```bash 
+npm install
+```
+
+---
+### Alternatively,
+#### Initialize a new project
+
+1. Create a new Node.js project and initialize it with npm:
+
+   ```bash
+   npm init -y
+   ```
+
+2. Install required dependencies (express, mongoose, dotenv, cloudinary, multer, bcrypt, nodemon etc):
+
+   ```bash
+   npm install express mongoose dotenv cloudinary multer express-validator
+   ```
+
 - Folder Structure
 ```
 RESTful API/
@@ -48,15 +71,10 @@ RESTful API/
 |   ├── db.config.js
 ├── .env
 ├── index.js
+├── package-lock.json
 ├── package.json
-├── README.md
 ```
 
-2. Install Dependencies:
-Make sure you have Node.js installed on your machine.
-```bash 
-npm install
-```
 3. Set up environment variables:
 Create a .env file in the root directory of your project and add the following environment variables:
 ```env
@@ -144,7 +162,7 @@ The server will start on the port specified in the .env file (default is 3000).
 
 ### User Management
 
-#### Get all users.
+#### Retrieve all users.
 - **Endpoint** `GET /api/users`
 
 - **Request Body(raw):** `None`
@@ -255,8 +273,6 @@ The server will start on the port specified in the .env file (default is 3000).
 }
  ```
 
-## Examples of Requests and Responses
-### Retrieve All Users
 
 
 
